@@ -1,3 +1,6 @@
 .idea
 .DS_Store
 CSC3056-2024-G57.iml
+/bin/
+.classpath
+.project
