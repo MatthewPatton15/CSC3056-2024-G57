@@ -71,13 +71,11 @@ public class DataUtilitiesTest {
 	
 	@Test
 	public void testCalculateColumnTotalColumnLessThanZero() {
-		
 		try {
-			DataUtilities.calculateColumnTotal(values2D, -1);
+			assertEquals("Wrong output returned, should be 0", 0, DataUtilities.calculateColumnTotal(values2D, -1), 0.0000001d);
 			
-			fail("No exception thrown. The expected outcome was: a thrown exception of type: ArrayIndexOutOfBoundsException");
 		} catch (Exception ex) {
-			assertTrue("Incorrect exception type thrown", ex.getClass().equals(ArrayIndexOutOfBoundsException.class));
+			fail("Method supposed to return zero");
 		}
 	}
 	
@@ -110,22 +108,19 @@ public class DataUtilitiesTest {
 	@Test
 	public void testCalculateColumnTotalValidDataColumnIsTotalColumns() {
 		try {
-			DataUtilities.calculateColumnTotal(values2D, 5);
+			assertEquals("Wrong output returned, should be 0", 0, DataUtilities.calculateColumnTotal(values2D, 5), 0.0000001d);
 			
-			fail("No exception thrown. The expected outcome was: a thrown exception of type: ArrayIndexOutOfBoundsException");
 		} catch (Exception ex) {
-			assertTrue("Incorrect exception type thrown", ex.getClass().equals(ArrayIndexOutOfBoundsException.class));
+			fail("Method supposed to return zero");
 		}
 	}
 	@Test
 	public void testCalculateRowTotalRowLessThanZero() {
-		
 		try {
-			DataUtilities.calculateRowTotal(values2D, -1);
+			assertEquals("Wrong output returned, should be 0", 0, DataUtilities.calculateRowTotal(values2D, -1), 0.0000001d);
 			
-			fail("No exception thrown. The expected outcome was: a thrown exception of type: ArrayIndexOutOfBoundsException");
 		} catch (Exception ex) {
-			assertTrue("Incorrect exception type thrown", ex.getClass().equals(ArrayIndexOutOfBoundsException.class));
+			fail("Method supposed to return zero");
 		}
 	}
 	
@@ -158,11 +153,10 @@ public class DataUtilitiesTest {
 	@Test
 	public void testCalculateRowTotalValidDataRowIsTotalRow() {
 		try {
-			DataUtilities.calculateRowTotal(values2D, 4);
+			assertEquals("Wrong output returned, should be 0", 0, DataUtilities.calculateRowTotal(values2D, 4), 0.0000001d);
 			
-			fail("No exception thrown. The expected outcome was: a thrown exception of type: ArrayIndexOutOfBoundsException");
 		} catch (Exception ex) {
-			assertTrue("Incorrect exception type thrown", ex.getClass().equals(ArrayIndexOutOfBoundsException.class));
+			fail("Method supposed to return zero");
 		}
 	}
 
