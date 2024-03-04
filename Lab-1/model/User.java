@@ -55,7 +55,13 @@ public class User {
 		this.mobile_number = mobile;
 	}
 	
+	@Override
 	public String toString() {
-		return this.username + ", " + this.password + ", " + this.first_name + ", " + this.last_name + ", " + this.mobile_number;
+		return String.format("%-10s| %-20s| %-10s| %-15s| %-15s",
+				this.username,
+				this.password,
+				this.first_name,
+				this.last_name,
+				this.mobile_number);
 	}
 }
