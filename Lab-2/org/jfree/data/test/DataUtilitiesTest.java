@@ -70,7 +70,7 @@ public class DataUtilitiesTest {
 	}
 	
 	@Test
-	public void testCalculateColumnTotalColumnLessThanZero() {
+	public void testColumnLessThanZero() {
 		try {
 			assertEquals("Wrong output returned, should be 0", 0, DataUtilities.calculateColumnTotal(values2D, -1), 0.0000001d);
 			
@@ -80,7 +80,7 @@ public class DataUtilitiesTest {
 	}
 	
 	@Test
-	public void testCalculateColumnTotalDataIsNull() {
+	public void testDataIsNullColumn() {
 		try {
 			DataUtilities.calculateColumnTotal(null, 0);
 			
@@ -91,22 +91,22 @@ public class DataUtilitiesTest {
 	}
 	
 	@Test
-	public void testCalculateColumnTotalValidDataColumnZero() {
+	public void testValidDataColumnZero() {
 		assertEquals("Wrong sum returned, should be 23", 23, DataUtilities.calculateColumnTotal(values2D, 0), 0.0000001d);
 	}
 	
 	@Test
-	public void testCalculateColumnTotalValidDataColumnNormalValue() {
+	public void testValidDataColumnNormalValue() {
 		assertEquals("Wrong sum returned, should be 31", 31, DataUtilities.calculateColumnTotal(values2D, 2), 0.0000001d);
 	}
 	
 	@Test
-	public void testCalculateColumnTotalValidDataColumnIsTotalColumnsMinusOne() {
+	public void testValidDataColumnIsTotalColumnsMinusOne() {
 		assertEquals("Wrong sum returned, should be 39", 39, DataUtilities.calculateColumnTotal(values2D, 4), 0.0000001d);
 	}
 	
 	@Test
-	public void testCalculateColumnTotalValidDataColumnIsTotalColumns() {
+	public void testValidDataColumnIsTotalColumns() {
 		try {
 			assertEquals("Wrong output returned, should be 0", 0, DataUtilities.calculateColumnTotal(values2D, 5), 0.0000001d);
 			
@@ -115,7 +115,7 @@ public class DataUtilitiesTest {
 		}
 	}
 	@Test
-	public void testCalculateRowTotalRowLessThanZero() {
+	public void testRowLessThanZero() {
 		try {
 			assertEquals("Wrong output returned, should be 0", 0, DataUtilities.calculateRowTotal(values2D, -1), 0.0000001d);
 			
@@ -125,7 +125,7 @@ public class DataUtilitiesTest {
 	}
 	
 	@Test
-	public void testCalculateRowTotalDataIsNull() {
+	public void testDataIsNullRow() {
 		try {
 			DataUtilities.calculateRowTotal(null, 0);
 			
@@ -136,22 +136,22 @@ public class DataUtilitiesTest {
 	}
 	
 	@Test
-	public void testCalculateRowTotalValidDataRowZero() {
+	public void testValidDataRowZero() {
 		assertEquals("Wrong sum returned, should be 15", 15, DataUtilities.calculateRowTotal(values2D, 0), 0.0000001d);
 	}
 	
 	@Test
-	public void testCalculateRowTotalValidDataRowNormalValue() {
+	public void testValidDataRowNormalValue() {
 		assertEquals("Wrong sum returned, should be 50", 50, DataUtilities.calculateRowTotal(values2D, 2), 0.0000001d);
 	}
 	
 	@Test
-	public void testCalculateRowTotalValidDataRowIsTotalRowsMinusOne() {
+	public void testValidDataRowIsTotalRowsMinusOne() {
 		assertEquals("Wrong sum returned, should be 60", 60, DataUtilities.calculateRowTotal(values2D, 3), 0.0000001d);
 	}
 	
 	@Test
-	public void testCalculateRowTotalValidDataRowIsTotalRow() {
+	public void testValidDataRowIsTotalRow() {
 		try {
 			assertEquals("Wrong output returned, should be 0", 0, DataUtilities.calculateRowTotal(values2D, 4), 0.0000001d);
 			
@@ -161,7 +161,7 @@ public class DataUtilitiesTest {
 	}
 
 	@Test
-	public void testCreateNumberArrayNull() {
+	public void testDataIsNullNumberArray() {
 		try {
 			DataUtilities.createNumberArray(null);
 			
@@ -172,13 +172,13 @@ public class DataUtilitiesTest {
 	}
 	
 	@Test
-	public void testCreateNumberArrayNotNull() {
+	public void testDataIsNotNullNumberArray() {
 		Number[] testNum = DataUtilities.createNumberArray(array);
 		assertEquals("Failed to create correct Number array", number[0], testNum[0]);
 	}
 	
 	@Test
-	public void testCreateNumberArray2DNull() {
+	public void testDataIsNullNumberArray2D() {
 		try {
 			DataUtilities.createNumberArray2D(null);
 			
@@ -189,13 +189,13 @@ public class DataUtilitiesTest {
 	}
 	
 	@Test
-	public void testCreateNumberArray2DNotNull() {
+	public void testDataIsNotNullNumberArray2D() {
 		Number[][] testNum2D = DataUtilities.createNumberArray2D(array2D);
 		assertEquals("Failed to create correct Number array", number2D[0][0], testNum2D[0][0]);
 	}
 	
 	@Test
-	public void testGetCumulativePercentagesNull() {
+	public void testDataIsNullCumulativePercentages() {
 		try {
 			DataUtilities.getCumulativePercentages(null);
 			
@@ -206,7 +206,7 @@ public class DataUtilitiesTest {
 	}
 	
 	@Test
-	public void testGetCumulativePercentagesNotNull() {
+	public void testDataIsNotNullCumulativePercentages() {
 		KeyedValues keyVals = DataUtilities.getCumulativePercentages(keyedValues);
 		assertEquals("Failed to create correct KeyedValues object", keyedValues.getValue("0"), keyVals.getValue("0"));
 	}
