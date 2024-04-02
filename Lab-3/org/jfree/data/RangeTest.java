@@ -1,4 +1,4 @@
-package org.jfree.data;
+package org.jfree.data.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -307,6 +307,15 @@ public class RangeTest {
     public void testCombine_WithNonNullRanges() {
         Range range1 = new Range(1, 5);
         Range range2 = new Range(6, 10);
+        Range expected = new Range(1, 10);
+        Range result = Range.combine(range1, range2);
+        assertEquals("Combining two non-null ranges should result in a range spanning both", expected, result);
+    }
+    
+    @Test
+    public void testCombine_WithNonNullRangesReverseOrder() {
+        Range range1 = new Range(6, 10);
+        Range range2 = new Range(1, 5);
         Range expected = new Range(1, 10);
         Range result = Range.combine(range1, range2);
         assertEquals("Combining two non-null ranges should result in a range spanning both", expected, result);
