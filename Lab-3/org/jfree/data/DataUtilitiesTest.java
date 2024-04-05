@@ -1,4 +1,4 @@
-package org.jfree.data.test;
+package org.jfree.data;
 
 import junit.framework.TestCase;
 
